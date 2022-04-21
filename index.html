@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
+<html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>theblindbandet@github.io: ~$</title>
+    <title>thebiteffect@thisismy.computer: ~$</title>
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-    <script src="/lib/typed.min.js"></script>
     <style>
         html,
         body,
@@ -23,7 +19,7 @@
             left: 16px;
             font-family: 'Press Start 2P', cursive;
             color: rgb(255, 255, 255);
-            font-size: 24pt
+            font-size: 18pt
         }
 
         .white {
@@ -41,36 +37,42 @@
         .red {
             color: rgb(255, 0, 0)
         }
+        .blink {
+            animation: blink-animation 1000ms step-start infinite;
+        }
+
+        @keyframes blink-animation {
+            0% {
+                opacity: 100%;
+            }
+            50% {
+                opacity: 0%;
+            }
+        }
     </style>
 
 </head>
 
 <body class="viewport" style="background-color:black;">
     <div id="commands" class="code" style="display:inherit">
-        <div id="past-commands"></div>
+        
         <div id="current-command">
-            <span class="green" id="user">theblindbandet@github.io</span>:
+            <span class="green" id="user">thebiteffect@thisismy.computer</span>:
             <span class="blue" id="path">~</span>$
-            <noscript class='command' id="command">homepage.sh█</noscript>
-            <span id="command-typed"></span>
+            <span class="command" id="command">cat ./index.html</span>
+            
         </div>
-        <br>
+        <br><div>
+            <span class="red" id="user">cat: ./index.html: No such file or directory</span>
+            
+        </div><br>
+    <div id="current-command">
+            <span class="green" id="user">thebiteffect@thisismy.computer</span>:
+            <span class="blue" id="path">~</span>$
+            <span class="command blink" id="command">|</span>
+            
+        </div>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var textToType = [' ^7500./homepage.sh^500 `<br>`^2000 `<span class="red">WARNING!</span>`^500 `<br><br>This website is under construction!<br>Do you wish to continue? (y/N) > `^2500y^750 `<br><br>Ok...<br><br>Here goes nothing!<br><br>`^2500 `<span class="red">env: bash: No such file or directory<br>`^2000 `env: bash: No such file or directory<br>`^1250 `env: bash: No such file or directory<br>`^4500 `<br>ERROR: Unable to find /index.html!`<br><br> `Aborting`.........................^3000 `</span><br><span class="green" id="user">theblindbandet@github.io</span>:<span class="blue" id="path">~ </span>$ `^1000exit^500 `<br>`^125 `exit`']
-            var typed = new Typed('#command-typed', {
-                strings: textToType,
-                typeSpeed: 200,
-                loop: false,
-                contentType: 'html',
-                cursorChar: '|',
-                autoInsertCss: true,
-                fadeOut: true,
-                onComplete: (self) => { document.getElementById('commands').style.display = 'none'; window.close(); }
-            });
-        });
-    </script>
-</body>
 
-</html>
+
+</body></html>
